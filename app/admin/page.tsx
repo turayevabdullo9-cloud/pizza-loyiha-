@@ -277,7 +277,7 @@ const AdminPage = () => {
                         className="w-full rounded-xl border border-gray-200 bg-[#f7f7f7] px-4 py-3 text-sm outline-none transition  "
                       />
                       <label className="block text-sm font-semibold">
-                        Категория ID
+                        Category Id
                       </label>
                       <select
                         value={productForm.category}

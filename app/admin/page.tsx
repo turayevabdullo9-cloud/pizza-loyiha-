@@ -166,7 +166,7 @@ const AdminPage = () => {
               type="submit"
               className="rounded-xl bg-blue-600 py-3 text-sm font-bold text-white transition hover:bg-blue-500"
             >
-              Войти как админ
+              sign in
             </button>
             {error && <p className="text-sm text-red-500">{error}</p>}
           </form>

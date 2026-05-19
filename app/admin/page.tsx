@@ -141,7 +141,7 @@ const AdminPage = () => {
     <div className="container py-8">
       <div className="mb-6 flex max-w-300 mx-auto flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Админ панель</h1>
+          <h1 className="text-3xl font-bold">Admin page</h1>
         </div>
         <Link href="/" className="text-sm font-semibold text-amber-700">
           back to home

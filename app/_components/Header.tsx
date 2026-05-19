@@ -24,7 +24,7 @@ const Header = () => {
                         React Pizza
                     </h1>
                     <p className="text-gray-400 text-xs leading-tight">
-                        самая вкусная пицца во вселенной
+                        самая вкусная пицца в бухаре
                     </p>
                 </div>
             </div>

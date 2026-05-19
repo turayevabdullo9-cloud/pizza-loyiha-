@@ -1,31 +1,46 @@
-'use client';
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { useCartStore } from '../store/useCartStore';
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import { useCartStore } from "../store/useCartStore";
 
 interface PizzaProps {
   id: string;
   title: string;
   price: number;
   imageUrl: string;
-  sizes: number[];
+  sizes: string;
   types: number[];
 }
 
-const typeNames = ['тонкое', 'традиционное'];
-
-export const PizzaCard: React.FC<PizzaProps> = ({ id, title, price, imageUrl, sizes, types }) => {
+const typeNames = ["тонкое", "традиционное"];
+export const PizzaCard: React.FC<PizzaProps> = ({
+  id,
+  title,
+  price,
+  imageUrl,
+  sizes,
+  types,
+}) => {
   const [activeType, setActiveType] = useState(types[0]);
   const [activeSize, setActiveSize] = useState(0);
   const addToCart = useCartStore((state) => state.addToCart);
   const cartItems = useCartStore((state) => state.items);
 
   const selectedType = typeNames[activeType] || typeNames[0];
-  const selectedSize = sizes[activeSize] || sizes[0];
+  const selectedSize = sizes?.[activeSize] || sizes[0];
+
+  
 
   const cartCount = cartItems
-    .filter((item) => item.id === id && item.size === selectedSize && item.type === selectedType)
+    .filter(
+      (item) =>
+        item.id === id &&
+        item.size === selectedSize &&
+        item.type === selectedType
+    )
     .reduce((sum, item) => sum + item.quantity, 0);
+
+   
 
   const handleAddToCart = () => {
     addToCart({
@@ -39,7 +54,7 @@ export const PizzaCard: React.FC<PizzaProps> = ({ id, title, price, imageUrl, si
   };
 
   return (
-    <div className="w-75 rounded-4xl bg-white p-5 text-center shadow-sm transition-all hover:-translate-y-1 group">
+    <div className="w-75 rounded-4xl  p-5 text-center shadow-sm transition-all hover:-translate-y-1 group">
       <Image
         src={imageUrl}
         alt={title}
@@ -70,7 +85,7 @@ export const PizzaCard: React.FC<PizzaProps> = ({ id, title, price, imageUrl, si
         </ul>
 
         <ul className="flex gap-2">
-          {sizes.map((size, i) => (
+          {JSON.parse(sizes).map((size, i) => (
             <li
               key={size}
               onClick={() => setActiveSize(i)}

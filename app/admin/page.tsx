@@ -151,7 +151,10 @@ const AdminPage = () => {
       {!isAdmin ? (
         <div className="mx-auto w-100 rounded-2xl shadow-xl mt-50 bg-white p-8 ">
           <h2 className="text-2xl font-bold mb-4">Вход для администратора</h2>
-          <p className="text-sm text-gray-500 mb-6">Введите код администратора, чтобы получить доступ к управлению. Логин и регистрация не нужны.</p>
+          <p className="text-sm text-gray-500 mb-6">
+            Введите код администратора, чтобы получить доступ к управлению.
+            Логин и регистрация не нужны.
+          </p>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <input
               value={code}
@@ -159,7 +162,10 @@ const AdminPage = () => {
               placeholder="Введите админ код"
               className="rounded-xl border border-gray-200 bg-[#f7f7f7] px-4 py-3 text-sm outline-none transition "
             />
-            <button type="submit" className="rounded-xl bg-blue-600 py-3 text-sm font-bold text-white transition hover:bg-blue-500">
+            <button
+              type="submit"
+              className="rounded-xl bg-blue-600 py-3 text-sm font-bold text-white transition hover:bg-blue-500"
+            >
               Войти как админ
             </button>
             {error && <p className="text-sm text-red-500">{error}</p>}
@@ -172,27 +178,33 @@ const AdminPage = () => {
             <div className="space-y-3">
               <button
                 type="button"
-                onClick={() => setSection('products')}
+                onClick={() => setSection("products")}
                 className={`w-full rounded-xl px-4 py-3 text-left text-sm font-semibold transition ${
-                  section === 'products' ? 'bg-blue-500 text-white' : 'bg-[#f3f3f3] text-[#282828] hover:bg-[#eaeaea]'
+                  section === "products"
+                    ? "bg-blue-500 text-white"
+                    : "bg-[#f3f3f3] text-[#282828] hover:bg-[#eaeaea]"
                 }`}
               >
                 Продукты
               </button>
               <button
                 type="button"
-                onClick={() => setSection('orders')}
+                onClick={() => setSection("orders")}
                 className={`w-full rounded-xl px-4 py-3 text-left text-sm font-semibold transition ${
-                  section === 'orders' ? 'bg-blue-500 text-white' : 'bg-[#f3f3f3] text-[#282828] hover:bg-[#eaeaea]'
+                  section === "orders"
+                    ? "bg-blue-500 text-white"
+                    : "bg-[#f3f3f3] text-[#282828] hover:bg-[#eaeaea]"
                 }`}
               >
                 Заказы
               </button>
               <button
                 type="button"
-                onClick={() => setSection('categories')}
+                onClick={() => setSection("categories")}
                 className={`w-full rounded-xl px-4 py-3 text-left text-sm font-semibold transition ${
-                  section === 'categories' ? 'bg-blue-500 text-white' : 'bg-[#f3f3f3] text-[#282828] hover:bg-[#eaeaea]'
+                  section === "categories"
+                    ? "bg-blue-500 text-white"
+                    : "bg-[#f3f3f3] text-[#282828] hover:bg-[#eaeaea]"
                 }`}
               >
                 Категории
@@ -201,51 +213,77 @@ const AdminPage = () => {
           </aside>
 
           <section className="space-y-6">
-            {section === 'products' ? (
+            {section === "products" ? (
               <>
                 <div className="rounded-4xl bg-white p-6 shadow-sm">
-                  <h2 className="text-2xl font-bold mb-4">Управление продуктами</h2>
+                  <h2 className="text-2xl font-bold mb-4">
+                    Управление продуктами
+                  </h2>
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-3">
-                      <label className="block text-sm font-semibold">Название</label>
+                      <label className="block text-sm font-semibold">
+                        Название
+                      </label>
                       <input
                         value={productForm.title}
-                        onChange={(e) => handleProductChange('title', e.target.value)}
+                        onChange={(e) =>
+                          handleProductChange("title", e.target.value)
+                        }
                         className="w-full rounded-xl border border-gray-200 bg-[#f7f7f7] px-4 py-3 text-sm outline-none transition "
                       />
-                      <label className="block text-sm font-semibold">Картинка URL</label>
+                      <label className="block text-sm font-semibold">
+                        Картинка URL
+                      </label>
                       <input
                         value={productForm.imageUrl}
-                        onChange={(e) => handleProductChange('imageUrl', e.target.value)}
+                        onChange={(e) =>
+                          handleProductChange("imageUrl", e.target.value)
+                        }
                         className="w-full rounded-xl border border-gray-200 bg-[#f7f7f7] px-4 py-3 text-sm outline-none transition "
                       />
-                      <label className="block text-sm font-semibold">Цена</label>
+                      <label className="block text-sm font-semibold">
+                        Цена
+                      </label>
                       <input
                         value={productForm.price}
-                        onChange={(e) => handleProductChange('price', e.target.value)}
+                        onChange={(e) =>
+                          handleProductChange("price", e.target.value)
+                        }
                         type="number"
                         step="1"
                         min="0"
                         className="w-full rounded-xl border border-gray-200 bg-[#f7f7f7] px-4 py-3 text-sm outline-none transition "
                       />
-                      <label className="block text-sm font-semibold">Размеры (через запятую)</label>
+                      <label className="block text-sm font-semibold">
+                        Размеры (через запятую)
+                      </label>
                       <input
                         value={productForm.sizes}
-                        onChange={(e) => handleProductChange('sizes', e.target.value)}
+                        onChange={(e) =>
+                          handleProductChange("sizes", e.target.value)
+                        }
                         className="w-full rounded-xl border border-gray-200 bg-[#f7f7f7] px-4 py-3 text-sm outline-none transition "
                       />
                     </div>
                     <div className="space-y-3">
-                      <label className="block text-sm font-semibold">Типы (0 или 1)</label>
+                      <label className="block text-sm font-semibold">
+                        Типы (0 или 1)
+                      </label>
                       <input
                         value={productForm.types}
-                        onChange={(e) => handleProductChange('types', e.target.value)}
+                        onChange={(e) =>
+                          handleProductChange("types", e.target.value)
+                        }
                         className="w-full rounded-xl border border-gray-200 bg-[#f7f7f7] px-4 py-3 text-sm outline-none transition  "
                       />
-                      <label className="block text-sm font-semibold">Категория ID</label>
+                      <label className="block text-sm font-semibold">
+                        Категория ID
+                      </label>
                       <select
                         value={productForm.category}
-                        onChange={(e) => handleProductChange('category', e.target.value)}
+                        onChange={(e) =>
+                          handleProductChange("category", e.target.value)
+                        }
                         className="w-full rounded-xl border border-gray-200 bg-[#f7f7f7] px-4 py-3 text-sm outline-none transition  "
                       >
                         <option value="0">0 — Без категории</option>
@@ -255,10 +293,14 @@ const AdminPage = () => {
                           </option>
                         ))}
                       </select>
-                      <label className="block text-sm font-semibold">Рейтинг</label>
+                      <label className="block text-sm font-semibold">
+                        Рейтинг
+                      </label>
                       <input
                         value={productForm.rating}
-                        onChange={(e) => handleProductChange('rating', e.target.value)}
+                        onChange={(e) =>
+                          handleProductChange("rating", e.target.value)
+                        }
                         type="number"
                         step="0.1"
                         min="0"
@@ -270,7 +312,9 @@ const AdminPage = () => {
                         onClick={saveProduct}
                         className="w-full rounded-3xl bg-gray-500 py-3 text-sm font-bold text-white transition hover:bg-gray-400"
                       >
-                        {editProductId ? 'Сохранить изменения' : 'Добавить продукт'}
+                        {editProductId
+                          ? "Сохранить изменения"
+                          : "Добавить продукт"}
                       </button>
                     </div>
                   </div>
@@ -285,11 +329,21 @@ const AdminPage = () => {
                       </div>
                     ) : (
                       products.map((product) => (
-                        <div key={product.id} className="rounded-3xl border border-gray-200 p-4 sm:flex sm:items-center sm:justify-between">
+                        <div
+                          key={product.id}
+                          className="rounded-3xl border border-gray-200 p-4 sm:flex sm:items-center sm:justify-between"
+                        >
                           <div>
                             <h3 className="font-bold">{product.title}</h3>
-                            <p className="text-sm text-gray-500">Цена: {product.price} ₽</p>
-                            <p className="text-sm text-gray-500">Размеры: {product.sizes.join(', ')}</p>
+                            <p className="text-sm text-gray-500">
+                              Цена: {product.price} ₽
+                            </p>
+                            <p className="text-sm text-gray-500">
+                              Размеры:{" "}
+                              {Array.isArray(product.sizes)
+                                ? product.sizes.join(", ")
+                                : String(product.sizes || "")}
+                            </p>
                           </div>
                           <div className="mt-4 flex flex-wrap gap-3 sm:mt-0">
                             <button
@@ -313,7 +367,7 @@ const AdminPage = () => {
                   </div>
                 </div>
               </>
-            ) : section === 'orders' ? (
+            ) : section === "orders" ? (
               <>
                 <div className="rounded-4xl bg-white p-6 shadow-sm">
                   <h2 className="text-2xl font-bold mb-4">Заказы</h2>
@@ -324,29 +378,56 @@ const AdminPage = () => {
                       </div>
                     ) : (
                       orders.map((order) => (
-                        <div key={order.id} className="rounded-3xl border border-gray-200 p-4 space-y-3">
+                        <div
+                          key={order.id}
+                          className="rounded-3xl border border-gray-200 p-4 space-y-3"
+                        >
                           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
                             <div>
-                              <h3 className="font-bold text-lg">Заказ #{order.id}</h3>
-                              <p className="text-sm text-gray-500">Дата: {order.createdAt}</p>
-                              <p className="text-sm text-gray-500">Клиент: {order.customerName || 'Не указано'}</p>
-                              <p className="text-sm text-gray-500">Телефон: {order.customerPhone || 'Не указано'}</p>
+                              <h3 className="font-bold text-lg">
+                                Заказ #{order.id}
+                              </h3>
+                              <p className="text-sm text-gray-500">
+                                Дата: {order.createdAt}
+                              </p>
+                              <p className="text-sm text-gray-500">
+                                Клиент: {order.customerName || "Не указано"}
+                              </p>
+                              <p className="text-sm text-gray-500">
+                                Телефон: {order.customerPhone || "Не указано"}
+                              </p>
                             </div>
-                            <span className={`inline-block rounded-full px-4 py-2 text-xs font-semibold ${statusColors[order.status]}`}>
+                            <span
+                              className={`inline-block rounded-full px-4 py-2 text-xs font-semibold ${
+                                statusColors[order.status]
+                              }`}
+                            >
                               {statusLabels[order.status]}
                             </span>
                           </div>
-                          
+
                           <div className="border-t pt-3">
-                            <h4 className="text-sm font-semibold mb-2">Товары:</h4>
+                            <h4 className="text-sm font-semibold mb-2">
+                              Товары:
+                            </h4>
                             <div className="space-y-2">
                               {order.items.map((item, idx) => (
-                                <div key={idx} className="flex justify-between text-sm bg-[#f7f7f7] p-3 rounded-xl">
+                                <div
+                                  key={idx}
+                                  className="flex justify-between text-sm bg-[#f7f7f7] p-3 rounded-xl"
+                                >
                                   <div>
-                                    <p className="font-semibold">{item.title}</p>
-                                    <p className="text-gray-600">{item.type}, {item.size} см × {item.quantity} шт</p>
+                                    <p className="font-semibold">
+                                      {item.title}
+                                    </p>
+                                    <p className="text-gray-600">
+                                      {item.type}, {item.size} см ×{" "}
+                                      {item.quantity} шт
+                                    </p>
                                   </div>
-                                  <p className="font-bold text-right">{item.price * item.quantity} ₽</p>
+                                  <p className="font-bold text-right">
+                                    {item.price * item.quantity} ₽
+                                  </p>
                                 </div>
                               ))}
                             </div>
@@ -355,47 +436,65 @@ const AdminPage = () => {
                           <div className="border-t pt-3 flex justify-between items-center">
                             <div>
                               <p className="text-sm text-gray-500">Сумма</p>
-                              <p className="text-xl font-bold">{order.totalPrice} ₽</p>
+                              <p className="text-xl font-bold">
+                                {order.totalPrice} ₽
+                              </p>
                             </div>
                             <div className="flex flex-wrap gap-2">
-                              {order.status !== 'completed' && order.status !== 'cancelled' && (
-                                <>
-                                  {order.status === 'new' && (
+                              {order.status !== "completed" &&
+                                order.status !== "cancelled" && (
+                                  <>
+                                    {order.status === "new" && (
+                                      <button
+                                        type="button"
+                                        onClick={() =>
+                                          updateOrderStatus(
+                                            order.id,
+                                            "preparing"
+                                          )
+                                        }
+                                        className="rounded-3xl bg-yellow-100 px-3 py-2 text-xs font-semibold text-yellow-800 hover:bg-yellow-200"
+                                      >
+                                        Готовится
+                                      </button>
+                                    )}
+                                    {(order.status === "new" ||
+                                      order.status === "preparing") && (
+                                      <button
+                                        type="button"
+                                        onClick={() =>
+                                          updateOrderStatus(order.id, "ready")
+                                        }
+                                        className="rounded-3xl bg-green-100 px-3 py-2 text-xs font-semibold text-green-800 hover:bg-green-200"
+                                      >
+                                        Готов
+                                      </button>
+                                    )}
+                                    {order.status === "ready" && (
+                                      <button
+                                        type="button"
+                                        onClick={() =>
+                                          updateOrderStatus(
+                                            order.id,
+                                            "completed"
+                                          )
+                                        }
+                                        className="rounded-3xl bg-blue-100 px-3 py-2 text-xs font-semibold text-blue-800 hover:bg-blue-200"
+                                      >
+                                        Завершить
+                                      </button>
+                                    )}
                                     <button
                                       type="button"
-                                      onClick={() => updateOrderStatus(order.id, 'preparing')}
-                                      className="rounded-3xl bg-yellow-100 px-3 py-2 text-xs font-semibold text-yellow-800 hover:bg-yellow-200"
+                                      onClick={() =>
+                                        updateOrderStatus(order.id, "cancelled")
+                                      }
+                                      className="rounded-3xl bg-red-100 px-3 py-2 text-xs font-semibold text-red-800 hover:bg-red-200"
                                     >
-                                      Готовится
+                                      Отменить
                                     </button>
-                                  )}
-                                  {(order.status === 'new' || order.status === 'preparing') && (
-                                    <button
-                                      type="button"
-                                      onClick={() => updateOrderStatus(order.id, 'ready')}
-                                      className="rounded-3xl bg-green-100 px-3 py-2 text-xs font-semibold text-green-800 hover:bg-green-200"
-                                    >
-                                      Готов
-                                    </button>
-                                  )}
-                                  {order.status === 'ready' && (
-                                    <button
-                                      type="button"
-                                      onClick={() => updateOrderStatus(order.id, 'completed')}
-                                      className="rounded-3xl bg-blue-100 px-3 py-2 text-xs font-semibold text-blue-800 hover:bg-blue-200"
-                                    >
-                                      Завершить
-                                    </button>
-                                  )}
-                                  <button
-                                    type="button"
-                                    onClick={() => updateOrderStatus(order.id, 'cancelled')}
-                                    className="rounded-3xl bg-red-100 px-3 py-2 text-xs font-semibold text-red-800 hover:bg-red-200"
-                                  >
-                                    Отменить
-                                  </button>
-                                </>
-                              )}
+                                  </>
+                                )}
                               <button
                                 type="button"
                                 onClick={() => removeOrder(order.id)}
@@ -422,8 +521,13 @@ const AdminPage = () => {
                       </div>
                     ) : (
                       numericCategories.map((category) => (
-                        <div key={category.id} className="flex items-center justify-between gap-3 rounded-3xl border border-gray-200 p-4">
-                          <span className="font-semibold">{category.id} — {category.name}</span>
+                        <div
+                          key={category.id}
+                          className="flex items-center justify-between gap-3 rounded-3xl border border-gray-200 p-4"
+                        >
+                          <span className="font-semibold">
+                            {category.id} — {category.name}
+                          </span>
                         </div>
                       ))
                     )}

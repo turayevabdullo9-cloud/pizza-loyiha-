@@ -358,7 +358,7 @@ const AdminPage = () => {
                               onClick={() => removeProduct(product.id)}
                               className="rounded-3xl bg-[#ffe8e6] px-4 py-2 text-xs font-semibold text-[#d33f2f] hover:bg-[#ffdad6]"
                             >
-                              Удалить
+                              delete
                             </button>
                           </div>
                         </div>

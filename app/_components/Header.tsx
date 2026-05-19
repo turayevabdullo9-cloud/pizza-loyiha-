@@ -21,7 +21,7 @@ const Header = () => {
                 />
                 <div className="flex flex-col">
                     <h1 className="text-xl font-black uppercase tracking-tight leading-tight text-[#181818]">
-                        React Pizza
+                        Next Pizza
                     </h1>
                     <p className="text-gray-400 text-xs leading-tight">
                         самая вкусная пицца в бухаре

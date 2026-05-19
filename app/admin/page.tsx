@@ -144,7 +144,7 @@ const AdminPage = () => {
           <h1 className="text-3xl font-bold">Админ панель</h1>
         </div>
         <Link href="/" className="text-sm font-semibold text-amber-700">
-          Вернуться на главную
+          back to home
         </Link>
       </div>
 
@@ -159,7 +159,7 @@ const AdminPage = () => {
             <input
               value={code}
               onChange={(e) => setCode(e.target.value)}
-              placeholder="Введите админ код"
+              placeholder="code: admin"
               className="rounded-xl border border-gray-200 bg-[#f7f7f7] px-4 py-3 text-sm outline-none transition "
             />
             <button

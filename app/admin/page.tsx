@@ -242,7 +242,7 @@ const AdminPage = () => {
                         className="w-full rounded-xl border border-gray-200 bg-[#f7f7f7] px-4 py-3 text-sm outline-none transition "
                       />
                       <label className="block text-sm font-semibold">
-                        Цена
+                        Price
                       </label>
                       <input
                         value={productForm.price}
@@ -255,7 +255,7 @@ const AdminPage = () => {
                         className="w-full rounded-xl border border-gray-200 bg-[#f7f7f7] px-4 py-3 text-sm outline-none transition "
                       />
                       <label className="block text-sm font-semibold">
-                        Размеры (через запятую)
+                        sizes (через запятую)
                       </label>
                       <input
                         value={productForm.sizes}
@@ -336,10 +336,10 @@ const AdminPage = () => {
                           <div>
                             <h3 className="font-bold">{product.title}</h3>
                             <p className="text-sm text-gray-500">
-                              Цена: {product.price} ₽
+                              Price: {product.price} ₽
                             </p>
                             <p className="text-sm text-gray-500">
-                              Размеры:{" "}
+                              sizes:{" "}
                               {Array.isArray(product.sizes)
                                 ? product.sizes.join(", ")
                                 : String(product.sizes || "")}

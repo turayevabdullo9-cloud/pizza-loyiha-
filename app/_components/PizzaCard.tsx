@@ -95,7 +95,7 @@ export const PizzaCard: React.FC<PizzaProps> = ({
                   : "text-[#595959] hover:text-[#282828] cursor-pointer"
               }`}
             >
-              {size} см.
+              {size} sm.
             </li>
           ))}
         </ul>
@@ -103,7 +103,7 @@ export const PizzaCard: React.FC<PizzaProps> = ({
 
       <div className="mt-6 flex items-center justify-between gap-4">
         <div className="text-left">
-          <div className="text-xs text-gray-500">Цена</div>
+          <div className="text-xs text-gray-500">Price</div>
           <div className="text-2xl font-bold">{price} ₽</div>
         </div>
 

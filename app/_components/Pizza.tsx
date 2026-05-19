@@ -6,7 +6,7 @@ import { PizzaCard } from './PizzaCard';
 const Pizza = () => {
     const { items, isLoading } = useProductStore();
 
-    if (isLoading) return <div className="p-10">Загрузка пицц...</div>;
+    if (isLoading) return <div className="p-10">Loading ...</div>;
 
     return (
         <div className="max-w-350 mx-auto grid grid-cols-4 gap-10 p-10">

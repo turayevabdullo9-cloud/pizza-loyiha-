@@ -294,7 +294,7 @@ const AdminPage = () => {
                         ))}
                       </select>
                       <label className="block text-sm font-semibold">
-                        Рейтинг
+                        Rating
                       </label>
                       <input
                         value={productForm.rating}

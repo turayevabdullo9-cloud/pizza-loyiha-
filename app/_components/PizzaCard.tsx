@@ -113,7 +113,7 @@ export const PizzaCard: React.FC<PizzaProps> = ({
           className="inline-flex items-center gap-2 rounded-3xl bg-[#fe5f1e] px-4 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-[#fe5f1e] border hover:border-[#fe5f1e] active:scale-95"
         >
           <span className="text-xl">+</span>
-          Plus
+          Add 
           {cartCount > 0 && (
             <span className="rounded-full bg-white px-2 py-1 text-xs text-[#282828]">
               {cartCount}
